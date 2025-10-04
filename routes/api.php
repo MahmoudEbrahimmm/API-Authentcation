@@ -8,4 +8,7 @@ Route::get('test',function(){
     return "TEST API";
 });
 
+Route::get('profile',[AuthentactionController::class,'profile'])
+    ->middleware('auth:sanctum');
 Route::post('register',[AuthentactionController::class,'register']);
+Route::post('login',[AuthentactionController::class,'login']);
