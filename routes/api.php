@@ -8,7 +8,10 @@ Route::get('test',function(){
     return "TEST API";
 });
 
-Route::get('profile',[AuthentactionController::class,'profile'])
-    ->middleware('auth:sanctum');
 Route::post('register',[AuthentactionController::class,'register']);
 Route::post('login',[AuthentactionController::class,'login']);
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('profile',[AuthentactionController::class,'profile']);
+    Route::post('logout',[AuthentactionController::class,'logout']);
+});
