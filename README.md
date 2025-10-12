@@ -1,66 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+API-Authentication
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel 11 RESTful API Authentication System built using Laravel Sanctum.
+This project provides a secure and modern API-based authentication structure for web and mobile applications, featuring registration, login, logout, password reset, and email verification.
 
-## About Laravel
+About the Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project serves as a practical implementation of a complete authentication system using Laravel 11 and Laravel Sanctum.
+It follows clean architecture principles and aims to help developers quickly set up a secure and scalable API for user authentication and access management.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Key Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+User registration and login
 
-## Learning Laravel
+Secure token-based authentication with Laravel Sanctum
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Logout and token revocation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Password reset via email
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Email verification system
 
-## Laravel Sponsors
+Protected routes for authenticated users only
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Standardized JSON response format
 
-### Premium Partners
+Easily integrated with any front-end (React, Vue, Angular, or mobile apps)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Requirements
 
-## Contributing
+Before running this project, make sure you have the following installed:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+PHP 8.1 or higher
 
-## Code of Conduct
+Laravel 11
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Composer
 
-## Security Vulnerabilities
+MySQL or any supported database
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Node.js (optional, if front-end assets are included)
 
-## License
+Setup and Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Clone the repository from GitHub.
+
+Install all required dependencies using Composer.
+
+Copy the example environment file and configure your database and mail settings.
+
+Generate the application key.
+
+Run database migrations to create the required tables.
+
+(Optional) Seed the database if sample data is provided.
+
+Start the local development server.
+
+The API will be accessible on your local URL, usually at http://127.0.0.1:8000
+.
+
+Project Structure
+
+The project follows the standard Laravel architecture:
+
+The app folder contains core application logic such as models, controllers, and middleware.
+
+The routes folder defines the web and API routes.
+
+The database folder includes migrations, factories, and seeders.
+
+The resources folder contains templates and other assets.
+
+The public folder holds public files accessible by users.
+
+API Endpoints
+
+The API provides a complete authentication flow including:
+
+Register new users
+
+Login and receive a personal access token
+
+Logout and revoke tokens
+
+Forgot password and reset password
+
+Email verification handling
+
+Get authenticated user information
+
+All protected routes require a valid Sanctum token for access.
+
+Usage
+
+This API can be easily connected to any front-end framework or mobile app.
+Once a user logs in successfully, the API returns a token that must be included in future requests for authorization.
+This makes the system ideal for use in single-page applications and mobile back-ends.
+
+Security
+
+Token-based authentication using Laravel Sanctum
+
+Hashed passwords using bcrypt
+
+Email verification for user identity validation
+
+Middleware protection for restricted routes
+
+Clean validation and error handling for all API responses
+
+Contribution Guidelines
+
+Contributions are welcome to improve and extend the project.
+To contribute:
+
+Fork this repository.
+
+Create a new branch for your feature or fix.
+
+Make your updates and keep the code clean and readable.
+
+Submit a pull request with a clear explanation of the changes.
+
+License
+
+This project is open-source and released under the MIT License.
+You are free to use, modify, and distribute it with proper credit to the original author.
+
+Developer Information
+
+Name: Mahmoud Ebrahim
+Email: mahmoud.backend.laravel@gmail.com
+
+GitHub Repository: https://github.com/MahmoudEbrahimmm/API-Authentcation
